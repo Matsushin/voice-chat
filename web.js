@@ -8,6 +8,10 @@ var express = require('express'),
 	app = module.exports = express.createServer(),
 	io = require('socket.io');
 
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
 // Configuration
 app.configure(function(){
 	app.set('views', __dirname + '/views');
@@ -58,7 +62,7 @@ var address = socket.handshake.address;
 	socket.on('disconnect',function(){
 		console.log('disconnect a');
 		
-		// ‘Şoˆ——vII
+		// é€€å‡ºå‡¦ç†è¦ï¼ï¼
 		io.sockets.emit('msg', {text: 'a exit'});
 	});
 
