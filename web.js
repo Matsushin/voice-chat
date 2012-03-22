@@ -48,7 +48,7 @@ app.listen(port);
 var room = {};
 
 io = io.listen(app);
-io.sockets.on('connection', function(socket){
+io.on('connection', function(socket){
 var address = socket.handshake.address;
  console.log("New connection from " + address.address + ":" + address.port);
 
