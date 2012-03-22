@@ -8,14 +8,12 @@ var express = require('express'),
 	app = module.exports = express.createServer(),
 	io = require('socket.io');
 
-io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-});
 // Configuration
 app.configure(function(){
 	app.set('views', __dirname + '/views');
 	app.set('view engine', 'ejs');
+	app.set('transports', ['xhr-polling']);
+	app.set('polling duration', 10);
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
 	app.use(express.cookieParser());
