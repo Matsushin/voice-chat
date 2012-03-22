@@ -163,8 +163,9 @@ function findRoom(id){
 var socket;
 var chat;
 function connect(id){
-
-	socket = io.connect();
+	var socket = new io.Socket(); // 3/22 add
+	socket.connect(); // 3/22 add
+	//socket = io.connect();
 	socket.on('connect', function () {
 		socket.emit('enter', {id : id});
 		socket.on('chat start', function(){
