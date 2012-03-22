@@ -8,8 +8,6 @@ var express = require('express'),
 	app = module.exports = express.createServer(),
 	io = require('socket.io');
 
-var app = express.createServer();
-
 // Configuration
 app.configure(function(){
 	app.set('views', __dirname + '/views');
