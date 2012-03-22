@@ -1,0 +1,21 @@
+<script src="/socket.io/socket.io.js" type="text/javascript"></script>
+<script src="/common/js/tinybox.js" type="text/javascript"></script>
+<script src="/common/js/voiceroom.js" type="text/javascript"></script>
+<h1><%= title %></h1>
+<div id="room_enter">
+		<h2>ルーム入室</h2>
+		ルーム名:<span class="enter_room_name"></span><br/>
+		あいことば:<input type="text" name="room_password" id="enter_room_password"><br/>
+		<input type="button" value="参加する" id="enter_btn" onclick="roomEnter($('.enter_room_name').html(), $('#enter_room_password').val())">
+</div>
+<div id="room_create">
+		<h2>ルーム作成</h2>
+		ルーム名:<input type="text" name="room_name" id="room_name"><br/>
+		あいことば:<input type="text" name="room_password" id="create_room_password"><br/>
+		<input type="button" value="作成する" onclick="roomCreate($('#room_name').val(), $('#create_room_password').val())">
+</div>
+<div id="main">
+	<a href="">ルームを作成する</a><br/><br/>
+	<ul id="room_list">
+	</ul>
+</div>

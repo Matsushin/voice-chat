@@ -1,0 +1,17 @@
+<script src="/socket.io/socket.io.js" type="text/javascript"></script>
+<script src="/common/js/tinybox.js" type="text/javascript"></script>
+<script src="/common/js/voicechat.js" type="text/javascript"></script>
+<script src="/common/js/swfobject.js" type="text/javascript"></script>
+<div id="swf"></div>
+<h1><%= title %></h1>
+<h2></h2>
+アカウント名:<span class="account_join_name" style="display:none;"></span><input type="text" name="account_name" id="account_name"> <input type="button" value="参加する" id="chat_enter"> <input type="button" value="退出する" id="chat_exit" style="display:none;"><br/>
+入室者:
+<ul class="member_list">
+</ul>
+<br/><br/>
+<input type="text" x-webkit-speech id="speech" lang="ja" onwebkitspeechchange="speechInput(this.value);" style="display:none;";><br/>
+<!-- <input type="text" id="word"><input type="button" value="送信する" id="test"> -->
+<div id="chat">
+	
+</div>
