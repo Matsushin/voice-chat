@@ -383,7 +383,8 @@ function connectDB(){
 		next();
 	});	
 	mongoose.model('Room', Room);
-	mongoose.connect('mongodb://localhost/voiceChatDb');
+	var uri = process.env.MONGOHQ_URL || 'mongodb://localhost/voiceChatDb';
+	mongoose.connect(uri);
 
 	var Room = mongoose.model('Room');
 
