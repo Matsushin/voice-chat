@@ -48,9 +48,9 @@ app.listen(port);
 var room = {};
 
 io = io.listen(app);
-io.on('connection', function(socket){
-//var address = socket.handshake.address;
- //console.log("New connection from " + address.address + ":" + address.port);
+io.sockets.on('connection', function(socket){
+var address = socket.handshake.address;
+ console.log("New connection from " + address.address + ":" + address.port);
 
 	
 	socket.on('enter', function(req){
@@ -77,8 +77,8 @@ function chatStart(id){
 		.of('/room/' + id)
 		.on('connection', function (socket) {
 			room[id] = true;
-			//var address = socket.handshake.address;
-			//console.log("room : " + id + " New connection from " + address.address + ":" + address.port);
+			var address = socket.handshake.address;
+			console.log("room : " + id + " New connection from " + address.address + ":" + address.port);
 
 			socket.on('msg', function(msg){
 				chat.emit('msg', {text: msg.text , name : msg.name, volume : msg.volume});

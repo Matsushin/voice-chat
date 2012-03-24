@@ -163,9 +163,9 @@ function findRoom(id){
 var socket;
 var chat;
 function connect(id){
-	var socket = new io.Socket(); // 3/22 add
-	socket.connect(); // 3/22 add
-	//socket = io.connect();
+	//var socket = new io.Socket(); // 3/22 add
+	//socket.connect(); // 3/22 add
+	socket = io.connect();
 	socket.on('connect', function () {
 		socket.emit('enter', {id : id});
 		socket.on('chat start', function(){
@@ -191,8 +191,8 @@ function send(text, volume){
 function chatStart(id){
 
 	// 入退室繰り返し対策
-
-	chat = io.connect('http://localhost:3000/room/'+id);
+	var domain = location.hostname
+	chat = io.connect('http://' + domain + '/room/'+id);
 	chat.on('connect', function () {
 		
 		chat.on('msg', function(msg){
