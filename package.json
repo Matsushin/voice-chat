@@ -6,6 +6,7 @@
       "express": "2.5.8"
     , "ejs": ">= 0.0.1",
 	"socket.io": "0.9.1",
-    "mongoose": "1.7.4"
+    "mongoose": "1.7.4",
+	"active-x-obfuscator": "0.0.1"
   }
 }
