@@ -171,7 +171,7 @@ exports.room_enter = function(req,res){
 exports.room_chat = function(req, res){
 
 	
-	res.render('chat', { title: 'VoiceDemo' });
+	res.render('chat', { title: 'VoiceChatDemo' });
 };
 exports.room_find = function(req, res){
 
