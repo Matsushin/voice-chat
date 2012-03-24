@@ -46,7 +46,7 @@ var port = process.env.PORT || 3000;
 app.listen(port);
 
 var room = {};
-/*
+
 io = io.listen(app);
 io.sockets.on('connection', function(socket){
 var address = socket.handshake.address;
@@ -91,5 +91,5 @@ function chatStart(id){
 	  });
 
 }
-*/
+
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
